@@ -13,9 +13,9 @@ categories : python
 ### 변수와 상수의 기본적인 특성
 변수 (variable)
 : 가변(Mutable). 데이터 값을 변경할 수 있음.  
+  
 상수 (literal)
 : 불변(immutable). 데이터 값을 변경할 수 없음.
-
   
 ### 파이썬은 강타입
 강타입 (Strong Type) : 객체의 타입을 바꿀 수 없음.
