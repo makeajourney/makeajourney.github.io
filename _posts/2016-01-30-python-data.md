@@ -73,3 +73,11 @@ a의 값이 b로 복사된다고 생각하면 이해가 더 편리하다.
 * // 정수 나누기
 * % 나머지
 * ** 지수
+
+<br>
+
+### 연산자를 사용한 연산 시 주의사항
+* 정수 0을 쓸 수 있다. 05는 쓸 수 없다.  `SyntaxError: invalid token`
+* 0으로 나누면 (`5 / 0`) 예외 발생.  `ZeroDivisionError: division by zero` 
+* `5 // 0` 역시 예외 발생. `ZeroDivisionError: integer division or modulo by zero`
+* `a + 3`은 `a = a + 3`과 다르다.  a가 100으로 초기화 되어 있다고 할 때, `print(a + 3)`은 97을 출력하지만, a는 여전히 100이다.  `a = a + 3`은 두번째 a 변수의 값과 3을 더하기 연산한 후 그 값을 왼쪽의 a에 할당한다.
