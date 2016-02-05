@@ -126,3 +126,23 @@ divmod(9, 5)	// 결과는 (1, 4)
 2진수 : `0b10`  
 8진수 : `0o10`  
 16진수 : `0x10`  
+
+
+<br>
+
+
+### 형 변환 (type casting)
+다른 데이터타입을 정수로 변환 : int() 함수 사용.
+```
+int(True) 	// 결과는 1
+int(False) 	// 결과는 0
+int(98.6) 		// 결과는 99
+```
+int() 함수에서 숫자가 아닌 다른 뭔가를 변환하면 에러가 발생함.
+```
+int('99 bottles of beer on the wall')  
+int('')
+int('98.6')
+int('1.0e4')
+// 위 모두 같은 에러 발생 (ValueError: invalid literal for int() with base 10)
+```
