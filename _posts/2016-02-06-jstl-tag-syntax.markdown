@@ -25,8 +25,8 @@ JSP 확장 태그
 `<%@ taglib uri="사용할 태그 라이브러리 URI" prefix="접두사" %>`  
 
 <br>
-
-###각 태그 라이브러리 별 uri  
+  
+### 각 태그 라이브러리 별 uri  
 
 * core : http://java.sun.com/jsp/jstl/core  
 * XML: http://java.sun.com/jsp/jstl/xml  
