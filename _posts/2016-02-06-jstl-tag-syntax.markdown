@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JSTL 사용하기
-categories: Java Web 
+category: Java Web 
 ---
 
 ## JSTL(JSP Standard Tag Library)  
