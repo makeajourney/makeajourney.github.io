@@ -1,4 +1,5 @@
 ---
+layout: post
 title: JSTL 사용하기
 category: Java Web 
 ---
