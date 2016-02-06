@@ -1,69 +1,60 @@
-title:            "Hello, My Special World!"
-description:      "IT, Travel and Life "
-disqus_shortname: hpstrtheme
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
-# When testing locally leave blank or use http://localhost:4000
+
+# SEO settings
+title: "Hello, World"
+description: "Programming, coffee and travel."
+keywords: ""
 url: 
+baseurl: 
+# baseurl: null
 
-# Owner/author information
-owner:
-  name:           Soyoun Kim
-  avatar:         avatar.jpg
-  bio:            "Chung-nam National University, Major in Computer Science, "
-  email:          makeajourney@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         makeajourney
-  stackexchange:  
-  linkedin:        
-  instagram:      hacerunviaje
-  flickr:         
-  tumblr:         
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:    +makeajourney
+google_analytics: 
+repo: http://github.com/makeajourney/makeajourney.github.io
+disqus_shortname: "fernandomoreira"
 
-# Background image to be tiled on all pages
-background: 
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : pygments
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+paginate: 4
+paginate_path: "/page/:num/"
+comments: true
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Seoul
-future:      true
-highlighter: rouge
-markdown:    kramdown
-gems:
-  - jekyll-sitemap
+source: source
+destination: _site
+
+# Sass configuration
 sass:
-  sass_dir: _sass
-  style: compressed
+  sass_dir: assets/scss
+  style: compressed # expanded
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+# Author settings
+author:
+  name     : Soyoun Kim
+  job      : University Student
+  bio      : "always looking for the best project and good coffee."
+  thumb    : /images/author.jpg
+  email    : makeajourney@gmail.com
+  url      : http://makeajourney.github.io
+  github   : http://github.com/makeajourney
+  twitter  : http://twitter.com/hacerunviaje
+  facebook : http://facebook.com/makeajourney
+  linkedin : http://linkedin.com/
 
-# Amount of post to show on home page
-paginate: 5
+# social settings
+og_locale: "pt_BR"
+twitter_card: "summary_large_image"
+twitter_site: "@nandomoreirame"
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: true
+gems:
+  - bourbon
+  - jekyll-paginate
 
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
