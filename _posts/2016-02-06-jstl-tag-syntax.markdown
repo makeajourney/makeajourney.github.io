@@ -26,13 +26,15 @@ JSP 확장 태그
 
 <br>
   
+  
 ### 각 태그 라이브러리 별 uri  
 
+
 * core : http://java.sun.com/jsp/jstl/core  
-* XML: http://java.sun.com/jsp/jstl/xml  
-* Internationalization: http://java.sun.com/jsp/jstl/fmt  
-* SQL: http://java.sun.com/jsp/jstl/sql  
-* Functions: http://java.sun.com/jsp/jstl/functions  
+* XML : http://java.sun.com/jsp/jstl/xml  
+* Internationalization : http://java.sun.com/jsp/jstl/fmt  
+* SQL : http://java.sun.com/jsp/jstl/sql  
+* Functions : http://java.sun.com/jsp/jstl/functions  
 
 <br>
 
