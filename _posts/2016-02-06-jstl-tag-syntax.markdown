@@ -241,7 +241,8 @@ items 속성의 값으로 다음의 값이 올 수 있음.
 <br>
 
 #### \<c:redirect>
-HttpServletResponse의 sendRedirect() 호출
+HttpServletResponse의 sendRedirect() 호출  
+
 ```
 <c:redirect url="redirect 할 url"/>
 ```
