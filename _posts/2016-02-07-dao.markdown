@@ -1,0 +1,21 @@
+---
+title: "DAO 이해하기"
+layout: post
+categories : "Java Web"
+---
+
+### DAO
+
+Data Access Object  
+데이터베이스와 연동하여 테이터를 처리하는 객체  
+데이터를 생성, 조회, 변경, 삭제하는(CRUD) 역할 수행.  
+보통 하나의 Table과 View에 대응.  
+데이터 처리 부분을 분리함으로써, 재사용성이 높아지고 유지보수가 용이해짐.  
+
+
+<br>
+
+### DAO 생성
+1. dao 패키지 생성
+1. 생성한 패키지에 table name + dao 형식으로 클래스 생성
+  ex. MemberDao 
