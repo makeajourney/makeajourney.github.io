@@ -19,3 +19,17 @@ Data Access Object
 1. dao 패키지 생성
 1. 생성한 패키지에 table name + dao 형식으로 클래스 생성
   ex. MemberDao 
+1. 생성한 dao class에 instance variable인 Connection(java.sql.Connection) 선언 
+2. setConnection() method 생성
+  Connection을 매개변수로 받아서 인스턴스 변수에 세팅
+1. 각각의 Data를 처리할 함수 정의
+  각각의 함수에서 Statement, ResultSet 객체 선언하여 사용
+
+<br>
+
+### DAO 사용
+1. Servlet에서 Connection 선언
+2. DAO class 선언
+3. 선언한 DAO class의 setConnection() method를 호출하면서 매개변수로 Connection 전달
+4. DAO 객체의 데이터 처리 함수 호출하여 사용
+5. 리턴데이터가 있는 함수의 경우에 이 데이터를 활용
