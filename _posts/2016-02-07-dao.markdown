@@ -113,3 +113,16 @@ listener를 배치하는 방법으로 두가지가 있다.
 	```
 	  
 	listener-class 태그 내에 ServletContextListener 인터페이스를 구현한 클래스의 Qualified Name을 써주면 된다.  
+
+<br>
+
+### 서블릿에서 Listener로 생성한 DAO 객체 사용하기
+1. ServletContext 선언한 뒤, `this.getServletContext() ` 호출하여 서블릿저장소 가져옴.  
+	```
+	ServletContext sc = this.getServletContext();
+	```
+	
+2. DAO 객체 선언한 후 ServletContext 객체에서 DAO 객체를 가져옴.
+	```
+	MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
+	```
