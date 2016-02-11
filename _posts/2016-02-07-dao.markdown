@@ -41,9 +41,7 @@ Data Access Object
 웹 애플리케이션이 실행될 때 생성하여 여러 서블릿이 함께 공유하는 구조로 구현하면 메모리관리, 실행속도 측면에서 더 효율적.  
 DAO 공유를 위해 ServletContext에 저장.  
 웹 애플리케이션 시작시에 DAO Instance 객체 생성을 위해 ServletContextListener 활용.  
-
-<br>
-
+  
 1. 웹 애플리케이션이 시작되면, 서블릿 컨테이너는 ServletContextListener의 구현체에 대해 contextInitialized() method 호출  
 2. 리스너가 DB 커넥션 객체 생성  
 3. 리스너가 DAO 객체 생성  
@@ -93,3 +91,25 @@ DAO 공유를 위해 ServletContext에 저장.
 		} catch (Exception e) {}
 	```
 
+<br>
+
+### listener 배치
+
+listener를 배치하는 방법으로 두가지가 있다.  
+  
+1. Annotation 사용
+	```
+	@WebListener
+	public class ContextLoaderListener implements ServletContextListener {
+	...
+	```
+
+2. DD file에 XML 태그를 이용하여 선언
+	```
+	<!-- declaration to listener -->
+	<listener>
+		<listener-class>spms.listeners.ContextLoaderListener</listener-class>
+	</listener>
+	```
+	  
+	listener-class 태그 내에 ServletContextListener 인터페이스를 구현한 클래스의 Qualified Name을 써주면 된다.  
