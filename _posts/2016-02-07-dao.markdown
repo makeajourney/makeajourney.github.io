@@ -64,6 +64,7 @@ DAO 공유를 위해 ServletContext에 저장.
 	```
 	
 4. contextInitialized() method override  
+	
 	```
 	try {
 		ServletContext sc = event.getServletContext();
@@ -83,7 +84,7 @@ DAO 공유를 위해 ServletContext에 저장.
 		e.printStackTrace();
 	}
 	```
-  
+	
 5. contextDestroyed() method override  
 	
 	```
@@ -91,3 +92,4 @@ DAO 공유를 위해 ServletContext에 저장.
 			connection.close();   // connection 객체 해제
 		} catch (Exception e) {}
 	```
+
