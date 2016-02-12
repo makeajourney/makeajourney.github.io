@@ -62,29 +62,29 @@ DAO 공유를 위해 ServletContext에 저장.
 4. contextInitialized() method override  
 	
 
-		try {
-			ServletContext sc = event.getServletContext();
+		try {  
+			ServletContext sc = event.getServletContext();  
+		  
+			Class.forName(sc.getInitParameter("driver"));  
+			connection = DriverManager.getConnection(  
+				sc.getInitParameter("url"),  
+				sc.getInitParameter("username"),  
+				sc.getInitParameter("password"));  
 		
-			Class.forName(sc.getInitParameter("driver"));
-			connection = DriverManager.getConnection(
-				sc.getInitParameter("url"),
-				sc.getInitParameter("username"),
-				sc.getInitParameter("password"));
-		
-			MemberDao memberDao = new MemberDao();  // DAO 객체 생성
-			memberDao.setConnection(connection);  // connection 객체 주입
-				
-			sc.setAttribute("memberDao", memberDao);  // 생성된 DAO 객체를 Servlet Context에 저장
-				
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
+			MemberDao memberDao = new MemberDao();  // DAO 객체 생성  
+			memberDao.setConnection(connection);  // connection 객체 주입  
+				  
+			sc.setAttribute("memberDao", memberDao);  // 생성된 DAO 객체를 Servlet Context에 저장  
+				  
+		} catch (Throwable e) {  
+			e.printStackTrace();  
+		}  
 	
 5. contextDestroyed() method override  
 	
-		try {
-				connection.close();   // connection 객체 해제
-		} catch (Exception e) {}
+		try {  
+				connection.close();   // connection 객체 해제  
+		} catch (Exception e) {}  
 
 <br>
 
@@ -94,16 +94,16 @@ listener를 배치하는 방법으로 두가지가 있다.
   
 1. Annotation 사용 (javax.servlet.annotation.WebListener)  
 
-		@WebListener
-		public class ContextLoaderListener implements ServletContextListener {
-		...
+		@WebListener  
+		public class ContextLoaderListener implements ServletContextListener {  
+		...  
 
 2. DD file에 XML 태그를 이용하여 선언
-
-		`<!-- declaration to listener -->
-		`<listener>
-			`<listener-class>spms.listeners.ContextLoaderListener</listener-class>
-		`</listener>
+ 
+		`<!-- declaration to listener -->  
+		`<listener>  
+			`<listener-class>spms.listeners.ContextLoaderListener</listener-class>  
+		`</listener>  
 	  
 	listener-class 태그 내에 ServletContextListener 인터페이스를 구현한 클래스의 Qualified Name을 써주면 된다.  
 
@@ -113,11 +113,11 @@ listener를 배치하는 방법으로 두가지가 있다.
 1. ServletContext 선언한 뒤, `this.getServletContext() ` 호출하여 서블릿저장소 가져옴.  
 
 
-		ServletContext sc = this.getServletContext();
+		ServletContext sc = this.getServletContext();  
 
 	
 2. DAO 객체 선언한 후 ServletContext 객체에서 DAO 객체를 가져옴.
 
 
-		MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
+		MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");  
 
