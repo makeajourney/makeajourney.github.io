@@ -62,7 +62,7 @@ DAO 공유를 위해 ServletContext에 저장.
 	```
 	
 4. contextInitialized() method override  
-	
+
 	{% highlight java %}
 	try {
 		ServletContext sc = event.getServletContext();
@@ -83,13 +83,14 @@ DAO 공유를 위해 ServletContext에 저장.
 	}
 	{% endhighlight %}
 	
+	
 5. contextDestroyed() method override  
 	
-	```
+	~~~ java
 	try {
 			connection.close();   // connection 객체 해제
 		} catch (Exception e) {}
-	```
+	~~~
 
 <br>
 
@@ -98,13 +99,15 @@ DAO 공유를 위해 ServletContext에 저장.
 listener를 배치하는 방법으로 두가지가 있다.  
   
 1. Annotation 사용 (javax.servlet.annotation.WebListener)  
+
 	```
 	@WebListener
 	public class ContextLoaderListener implements ServletContextListener {
 	...
 	```
 
-2. DD file에 XML 태그를 이용하여 선언
+2. DD file에 XML 태그를 이용하여 선언  
+
 	```
 	<!-- declaration to listener -->
 	<listener>
@@ -122,7 +125,7 @@ listener를 배치하는 방법으로 두가지가 있다.
 	ServletContext sc = this.getServletContext();
 	```
 	
-2. DAO 객체 선언한 후 ServletContext 객체에서 DAO 객체를 가져옴.
+2. DAO 객체 선언한 후 ServletContext 객체에서 DAO 객체를 가져옴.  
 	```
 	MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 	```
