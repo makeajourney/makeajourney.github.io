@@ -63,7 +63,7 @@ DAO 공유를 위해 ServletContext에 저장.
 	
 4. contextInitialized() method override  
 	
-	~~~ java
+	{% highlight java %}
 	try {
 		ServletContext sc = event.getServletContext();
 	
@@ -81,7 +81,7 @@ DAO 공유를 위해 ServletContext에 저장.
 	} catch (Throwable e) {
 		e.printStackTrace();
 	}
-	~~~
+	{% endhighlight %}
 	
 5. contextDestroyed() method override  
 	
