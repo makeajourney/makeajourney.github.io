@@ -62,27 +62,25 @@ DAO 공유를 위해 ServletContext에 저장.
 	```
 	
 4. contextInitialized() method override  
-
+	
 <pre><code>
-	
-	try {
-		ServletContext sc = event.getServletContext();
-	
-		Class.forName(sc.getInitParameter("driver"));
-		connection = DriverManager.getConnection(
-			sc.getInitParameter("url"),
-			sc.getInitParameter("username"),
-			sc.getInitParameter("password"));
-	
-		MemberDao memberDao = new MemberDao();  // DAO 객체 생성
-		memberDao.setConnection(connection);  // connection 객체 주입
-			
-		sc.setAttribute("memberDao", memberDao);  // 생성된 DAO 객체를 Servlet Context에 저장
-			
-	} catch (Throwable e) {
-		e.printStackTrace();
-	}
-	
+try {
+	ServletContext sc = event.getServletContext();
+
+	Class.forName(sc.getInitParameter("driver"));
+	connection = DriverManager.getConnection(
+		sc.getInitParameter("url"),
+		sc.getInitParameter("username"),
+		sc.getInitParameter("password"));
+
+	MemberDao memberDao = new MemberDao();  // DAO 객체 생성
+	memberDao.setConnection(connection);  // connection 객체 주입
+		
+	sc.setAttribute("memberDao", memberDao);  // 생성된 DAO 객체를 Servlet Context에 저장
+		
+} catch (Throwable e) {
+	e.printStackTrace();
+}
 </code></pre>
 
 	
