@@ -1,0 +1,128 @@
+---
+title: "DAO 이해하기"
+layout: post
+categories : "Java Web"
+---
+
+### DAO
+
+Data Access Object  
+데이터베이스와 연동하여 테이터를 처리하는 객체  
+데이터를 생성, 조회, 변경, 삭제하는(CRUD) 역할 수행.  
+보통 하나의 Table과 View에 대응.  
+데이터 처리 부분을 분리함으로써, 재사용성이 높아지고 유지보수가 용이해짐.  
+
+
+<br>
+
+### DAO 생성
+1. dao 패키지 생성
+1. 생성한 패키지에 table name + dao 형식으로 클래스 생성  
+  ex. MemberDao 
+1. 생성한 dao class에 instance variable인 Connection(java.sql.Connection) 선언 
+2. setConnection() method 생성  
+  Connection을 매개변수로 받아서 인스턴스 변수에 세팅
+1. 각각의 Data를 처리할 함수 정의  
+  각각의 함수에서 Statement(java.sql.Statement), ResultSet(java.sql.ResultSet) 객체 선언하여 사용
+
+<br>
+
+### DAO 사용
+1. Servlet에서 Connection 선언
+2. DAO class 선언
+3. 선언한 DAO class의 setConnection() method를 호출하면서 매개변수로 Connection 전달
+4. DAO 객체의 데이터 처리 함수 호출하여 사용
+5. 리턴데이터가 있는 함수의 경우에 이 데이터를 활용
+
+<br>
+
+### ServletContextListner를 활용한 DAO의 사용
+서블릿의 요청을 처리하기위해 매번 DAO 인스턴스를 생성하는 것은 비효율적.  
+웹 애플리케이션이 실행될 때 생성하여 여러 서블릿이 함께 공유하는 구조로 구현하면 메모리관리, 실행속도 측면에서 더 효율적.  
+DAO 공유를 위해 ServletContext에 저장.  
+웹 애플리케이션 시작시에 DAO Instance 객체 생성을 위해 ServletContextListener 활용.  
+  
+1. 웹 애플리케이션이 시작되면, 서블릿 컨테이너는 ServletContextListener의 구현체에 대해 contextInitialized() method 호출  
+2. 리스너가 DB 커넥션 객체 생성  
+3. 리스너가 DAO 객체 생성  
+4. DB 커넥션 객체를 DAO에 주입  
+5. 서블릿들이 DAO 객체를 사용할 수 있도록 ServletContext 보관소에 저장  
+6. 웹 애플리케이션이 종료되면, 서블릿 컨테이너가 리스너의 contextDestroyed() method 호출  
+
+<br>
+
+### DAO를 위한 Listener 생성
+1. listener 클래스를 생성할 listeners package 생성  
+2. 생성된 패키지 내에 Listener 클래스 생성
+3. 생성한 클래스에 ServletContextListener 인터페이스 (javax.servlet.ServletContextListener) 구현
+4. Connection instance variable 선언  
+	
+	```
+	Connection connection;
+	```
+	
+4. contextInitialized() method override  
+	
+	```
+	try {
+		ServletContext sc = event.getServletContext();
+	
+		Class.forName(sc.getInitParameter("driver"));
+		connection = DriverManager.getConnection(
+			sc.getInitParameter("url"),
+			sc.getInitParameter("username"),
+			sc.getInitParameter("password"));
+	
+		MemberDao memberDao = new MemberDao();  // DAO 객체 생성
+		memberDao.setConnection(connection);  // connection 객체 주입
+			
+		sc.setAttribute("memberDao", memberDao);  // 생성된 DAO 객체를 Servlet Context에 저장
+			
+	} catch (Throwable e) {
+		e.printStackTrace();
+	}
+	```
+	
+5. contextDestroyed() method override  
+	
+	```
+	try {
+			connection.close();   // connection 객체 해제
+		} catch (Exception e) {}
+	```
+
+<br>
+
+### listener 배치
+
+listener를 배치하는 방법으로 두가지가 있다.  
+  
+1. Annotation 사용 (javax.servlet.annotation.WebListener)  
+	```
+	@WebListener
+	public class ContextLoaderListener implements ServletContextListener {
+	...
+	```
+
+2. DD file에 XML 태그를 이용하여 선언
+	```
+	<!-- declaration to listener -->
+	<listener>
+		<listener-class>spms.listeners.ContextLoaderListener</listener-class>
+	</listener>
+	```
+	  
+	listener-class 태그 내에 ServletContextListener 인터페이스를 구현한 클래스의 Qualified Name을 써주면 된다.  
+
+<br>
+
+### 서블릿에서 Listener로 생성한 DAO 객체 사용하기
+1. ServletContext 선언한 뒤, `this.getServletContext() ` 호출하여 서블릿저장소 가져옴.  
+	```
+	ServletContext sc = this.getServletContext();
+	```
+	
+2. DAO 객체 선언한 후 ServletContext 객체에서 DAO 객체를 가져옴.
+	```
+	MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
+	```
