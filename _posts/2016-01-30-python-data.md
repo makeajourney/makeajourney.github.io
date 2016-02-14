@@ -150,3 +150,20 @@ int('98.6')
 int('1.0e4')
 // 위 모두 같은 에러 발생 (ValueError: invalid literal for int() with base 10)
 ```
+
+<br>
+
+
+### int의 크기
+
+Python 3에서는 int의 크기 제한이 없다.  
+64bit보다 더 큰 수도 담을 수 있다.  
+
+
+<br>
+
+### 부동소수점수
+부동소수점수로 형 변환하기 위해서 float() 함수 사용.
+```
+float('99')	// 결과는 99.0
+```
