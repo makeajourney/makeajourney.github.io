@@ -63,8 +63,7 @@ DAO 공유를 위해 ServletContext에 저장.
 	
 4. contextInitialized() method override  
 	
-<pre><code>
-try {
+	<pre><code>try {
 	ServletContext sc = event.getServletContext();
 
 	Class.forName(sc.getInitParameter("driver"));
