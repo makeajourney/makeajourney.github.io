@@ -108,7 +108,7 @@ listener를 배치하는 방법으로 두가지가 있다.
 	> ```
 	> <!-- declaration to listener -->
 	> <listener>
-	>	<listener-class>spms.listeners.ContextLoaderListener`</listener-class>
+	>	<listener-class>spms.listeners.ContextLoaderListener</listener-class>
 	> </listener></code></pre>
 	> ```
 	  
