@@ -106,10 +106,12 @@ listener를 배치하는 방법으로 두가지가 있다.
 2. DD file에 XML 태그를 이용하여 선언  
 
 	
-	<pre><code>`<!-- declaration to listener -->
-	`<listener>
-		`<listener-class>spms.listeners.ContextLoaderListener`</listener-class>
-	`</listener></code></pre>
+> ```
+> <!-- declaration to listener -->
+> <listener>
+>	<listener-class>spms.listeners.ContextLoaderListener`</listener-class>
+> </listener></code></pre>
+> ```
 	
 	  
 	listener-class 태그 내에 ServletContextListener 인터페이스를 구현한 클래스의 Qualified Name을 써주면 된다.  
