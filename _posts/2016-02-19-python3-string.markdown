@@ -58,7 +58,7 @@ categories : python3
 <br>
 
 ### 문자열의 복제
-\* 연산자를 이용하여 문자열의 복제가 가능하다.  
+`*` 연산자를 이용하여 문자열의 복제가 가능하다.  
 `'Na ' * 3		// 'Na Na Na'`  
 
 <br>
@@ -70,7 +70,7 @@ categories : python3
 	음수로도 지정 가능하다. -1을 입력하면 문자열의 가장 마지막 문자를 가리킨다. -2는 뒤에서 두 번째, -3은 뒤에서 세 번째를 가리킨다.  
 	`letter[0]	// 'a'`  
 	offset 값을 문자열의 길이보다 큰 값으로 지정하면 에러가 발생한다.  
-		`IndexError: string index out of range`
+		`IndexError: string index out of range`  
 2. Python의 문자열은 불변한 속성이기 때문에 한 인덱스를 임의로 지정하여 변경하는 것이 불가능하다.  
 	`letter[1] = 'b'	// 에러 발생`  
 	`TypeError: 'str' object does not support item assignment`  
@@ -80,9 +80,9 @@ categories : python3
 ### 문자열 slice를 이용한 substring 추출
 `문자열변수이름[start:end]` : start부터 end offset까지 추출  
 `문자열변수이름[start:end:step]` : step 간격으로 start부터 end offset까지 추출  
-start와 end, step 모두 생략 가능하다. 모두 생략하면 (`varname[:]`) string의 전체가 추출된다.  
-하나만 생략 가능하다. start를 생략하면 처음부터 end까지, end를 생략하면 start부터 끝까지 substring을 추출한다.  
-음수 offset도 사용 가능하다.
+* start와 end, step 모두 생략 가능하다. 모두 생략하면 (`varname[:]`) string의 전체가 추출된다.  
+* 하나만 생략도 가능하다. start를 생략하면 처음부터 end까지, end를 생략하면 start부터 끝까지 substring을 추출한다.  
+* 음수 offset도 사용 가능하다.  
 	`letter[-3:]	// 'xyz'` 마지막 세 문자 출력  
 	`letter[-6:-2]	// 'uvwx'` 끝에서 여섯 번째 문자부터 끝에서 세 번째 문자까지 출력  
 	`letter[::-1]	// 'zyxwvutsrqponmlkjihgfedcba` 문자열을 역순으로 출력  
@@ -100,8 +100,10 @@ start와 end, step 모두 생략 가능하다. 모두 생략하면 (`varname[:]`
 어떤 구분자를 기준으로 하나의 문자열을 작은 문자열들의 리스트로 나누기 위해 사용.  
 `문자열변수이름.split('구분자')` 구분자를 생략하면 공백 기준으로 분리  
 `todos = 'get gloves,get mask,give cat vitamins,call ambulance'`  
-`todos.split(',')	// ['get gloves', 'get mask', 'give cat vitamins', 'call ambulance']` comma를 기준으로 분리  
-`todos.split()	// ['get', 'gloves,get', 'mask,give', 'cat', 'vitamins,call', 'ambulance']` 공백을 기준으로 분리  
+comma를 기준으로 분리  
+	`todos.split(',')	// ['get gloves', 'get mask', 'give cat vitamins', 'call ambulance']`  
+공백을 기준으로 분리  
+	`todos.split()	// ['get', 'gloves,get', 'mask,give', 'cat', 'vitamins,call', 'ambulance']`  
 
 <br>
 
