@@ -108,7 +108,7 @@ comma를 기준으로 분리
 <br>
 
 ### 문자열 결합
-`join()` 
+`join()`  
 split()과 반대로, 결합할 문자열을 지정한 다음에 문자열 리스트를 결합.  
 `'결합할문자열'.join(문자열리스트)`  
 
@@ -117,3 +117,125 @@ crypto_list = ['Yeti', 'Bigfoot', 'Loch Ness Monster']
 crypto_string = ', '.join(crypto_list)
 print(crypto_string)	// Yeti, Bigfoot, Loch Ness Monster
 ```
+
+<br>
+
+### 문자열 대체
+`replace()`  
+문자열의 일부를 대체하기 위해 사용.  
+`문자열객체.replace('바꿀 문자열', '대체할 문자열', 횟수)`  
+횟수를 생략하면 처음 나타나는 문자열 하나만 대체.  
+
+
+<br>
+
+### 대소문자 관련 문자열 함수
+
+<br>
+
+#### capitalize()
+`문자열객체.capitalize()`    
+첫번째 단어의 첫 글자를 대문자로 바꾸어 줌.  
+
+<br>
+
+#### title()
+`문자열객체.title()`    
+모든 단어의 첫번째 글자를 대문자로 바꾸어 줌.  
+
+<br>
+
+#### upper()
+`문자열객체.upper()`  
+모든 글자를 대문자로 바꾸어 줌.
+
+<br>
+
+#### lower()
+`문자열객체.lower()`  
+모든 글자를 소문자로 바꾸어 줌.  
+
+<br>
+
+#### swapcase()
+`문자열객체.swapcase()`  
+대문자는 소문자로, 소문자는 대문자로 바꾸어 줌.  
+
+<br>
+
+### 문자열 정렬
+
+<br>
+
+#### center()
+`문자열객체.center(범위)`  
+문자열을 지정한 범위 내에서 가운데에 오도록 한다.  
+`setup.center(30)	// '  a duck goes into a bar...   '`  
+
+<br>
+
+#### ljust()
+`문자열객체.ljust(범위)`  
+문자열을 지정한 범위 내에서 왼쪽에 오도록 한다.  
+`setup.ljust(30)	// 'a duck goes into a bar...     '`  
+
+<br>
+
+#### rjust()
+`문자열객체.rjust(범위)`  
+문자열을 지정한 범위 내에서 오른쪽에 오도록 한다.  
+`setup.rjust(30)	// '     a duck goes into a bar...'`  
+
+<br>
+
+### 그 외의 문자열 함수들
+
+<br>
+
+#### strip()
+`문자열객체.strip('제거할문자')`  
+문자열 객체의 양 끝에서 제거할 문자를 찾아서 삭제.  
+```
+setup = 'a duck goes into a bar...'
+setup.strip('.')	// 'a duck goes into a bar'
+```
+
+<br>
+
+#### startswith()
+`문자열객체.startswith('문자열')`  
+문자열객체가 매개변수인 문자열로 시작하는지를 확인.  
+boolean값 으로 리턴.  
+
+<br>
+
+#### endswith()
+`문자열객체.endswith('문자열')`  
+문자열객체가 매개변수인 문자열로 끝나는지를 확인.  
+boolean 값으로 리턴.  
+
+<br>
+
+#### find()
+`문자열객체.find('문자열')`  
+문자열객체에서 매개변수인 문자열이 첫번째로 나오는 곳의 offset 리턴.  
+
+<br>
+
+#### rfind()
+`문자열객체.rfind('문자열')`  
+문자열객체에서 매개변수인 문자열이 마지막으로 나오는 곳의 offset 리턴.  
+
+<br>
+
+#### count()
+`문자열객체.count('문자열')`  
+문자열객체에서 매개변수인 문자열이 나오는 빈도 수 리턴.  
+
+<br>
+
+#### isalnum()
+`문자열객체.isalnum()`  
+문자열객체가 글자와 숫자로만 이루어졌는지를 확인.  
+boolean 값으로 리턴.  
+
