@@ -1,0 +1,24 @@
+단축키|설명
+-|-
+Ctrl + Shift + R|파일(Resource) 기준으로 찾기
+Ctrl + Shift + T|Type(class, interface)으로 찾기
+Ctrl + O|메소드나 변수로 바로가기
+Ctrl + L|입력한 라인으로 바로가기
+Ctrl + Q|직전에 편집한 위치로 이동
+Ctrl + T|supertype/subtype으로 이동
+Ctrl + E or F6|다른 에디터 열기
+Alt + Shift + S + R|getter, setter 자동 추가
+Ctrl + D|한줄 지우기
+Ctrl + Shift + O|자동 import
+Ctrl + Shift + F|자동 들여쓰기
+Ctrl + /|한줄 주석
+Ctrl + Shift + / or C|여러줄 주석
+Alt + ↑ or ↓|줄 옮기기
+Ctrl + Alt + ↑ or ↓|줄 복사
+Ctrl + Alt + G|선택된 문자열을 workspace 모든 파일에서 검색
+Ctrl + K|선택한 문자열과 같은 다음 문자열로 focus
+Ctrl + Shift + B|해당 line에 breakpoint 지정
+Ctrl + Alt + B|모든 break 무시 toggle
+Alt + Shift + A|멀티라인커서/일반커서 모드 전환
+Ctrl + Shift + L|프로젝트 전체에서 검색
+Ctrl + Alt + H|메소드 호출부 확인
