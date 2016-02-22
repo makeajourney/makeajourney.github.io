@@ -1,5 +1,11 @@
+---
+title: test
+layout: post
+---
+
+
 단축키|설명
--|-
+----|----
 Ctrl + Shift + R|파일(Resource) 기준으로 찾기
 Ctrl + Shift + T|Type(class, interface)으로 찾기
 Ctrl + O|메소드나 변수로 바로가기
