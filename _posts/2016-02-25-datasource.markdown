@@ -109,6 +109,7 @@ maxWait : 모든 커넥션이 다 사용되고 있을 때, 커넥션이 반납�
 closeMethod : 톰캣 서버가 종료될 때 자원을 해제하기 위해 호출하는 메소드 이름. 매개변수가 없어야 함.  
 
 - DD file에 내용 추가.
+
 ```
 <resource-ref>
   <res-ref-name>JNDI 이름</res-ref-name>
@@ -116,11 +117,14 @@ closeMethod : 톰캣 서버가 종료될 때 자원을 해제하기 위해 호�
   <res-auth>자원 관리의 주체</res-auth>
 </resource-ref>
 ```
+
 JNDI : Java Naming and Directory Interface API. Directory Service 에 접근하는 데 필요.  
 
 - contextInitialized() 에서 DataSource 가져오기.
+
 ```
 InitialContext initialContext = new InitialContext();
 DataSource ds = (DataSource) initialContext.lookup("java:comp/env/jdbc/studydb");
 ```
+
 톰캣 서버에서 자원을 찾기 위해 InitialContext 객체 생성하고, lookup() 통해 JNDI 이름으로 등록되어 있는 서버 자원을 가져옴.
