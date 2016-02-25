@@ -85,6 +85,7 @@ try {if (connection != null) connection.close(); } catch(Exception e) {}
 - tomcat 실행환경 폴더에서 context.xml 파일 수정.  
 파일 경로 : Servers > Tomcat v7.0 Server at localhost-config > context.xml  
 - <Context> tag 안에 <Resource> 태그 추가.  
+
 ```
 <Resource name="jdbc/db-name" auth="Container" type="javax.sql.DataSource" 
 	maxActive="10" maxIdle="3" maxWait="10000" 
@@ -94,6 +95,7 @@ try {if (connection != null) connection.close(); } catch(Exception e) {}
 	url="jdbc:mysql://localhost/db-name" 
 	closeMethod="close"/>
 ```
+
 name : JNDI 이름  
 auth : 자원 관리의 주체. Application / Container  
 type : 자원의 타입 지정. fully-qualified java class name 필요.  
