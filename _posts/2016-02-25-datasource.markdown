@@ -25,12 +25,14 @@ layout: post
 <br>
 
 #### DataSource 사용
-- BasicDataSource 인스턴스 변수 선언.
+- BasicDataSource 인스턴스 변수 선언.  
+
 ```
 BasicDataSource ds;
 ```
 
-- BasicDataSource 객체 생성.
+- BasicDataSource 객체 생성.  
+
 ```
 ds = new BasicDataSource();
 
@@ -41,12 +43,14 @@ ds.setUsername(sc.getInitParameter("username"));
 ds.setPassword(sc.getInitParameter("password"));
 ```
 
-- DAO 객체에 DataSource 주입.
+- DAO 객체에 DataSource 주입.  
+
 ```
 DAO-class-name.setDataSource(ds);
 ```
 
-- Connection close
+- Connection close  
+
 ```
   try { if (ds != null) ds.close(); } catch (SQLException e) {}
 ```
@@ -54,28 +58,33 @@ DAO-class-name.setDataSource(ds);
 <br>
 
 #### DataSource 사용
-- DataSource 인스턴스 선언
+- DataSource 인스턴스 선언  
+
 ```
 Datasource ds;
 ```
 
-- DataSource Setter
+- DataSource Setter  
+
 ```
 public void setDataSource(DataSource ds) {
 	this.ds = ds;
 }
 ```
 
-- connection 객체를 가져옴.
+- connection 객체를 가져옴.  
+
 ```
 connection = ds.getConnection();
 ```
 
-- connection 객체 반납.
+- connection 객체 반납.  
+
 ```
 try {if (connection != null) connection.close(); } catch(Exception e) {}
-```
-여기서 커넥션을 close()하면 실제로 커넥션을 해제하는 게 아니라, Proxy Object가 커넥션 객체를 커넥션 풀로 반납.
+```  
+
+여기서 커넥션을 close()하면 실제로 커넥션을 해제하는 게 아니라, Proxy Object가 커넥션 객체를 커넥션 풀로 반납.  
 
 <br>
 ---
@@ -108,7 +117,7 @@ maxIdle : DataSource로부터 유지할 수 있는 사용되지 않는 커넥션
 maxWait : 모든 커넥션이 다 사용되고 있을 때, 커넥션이 반납되어 제공하기까지 기다리는 최대 밀리초. 이 시간이 지날 때 까지 반납되는 커넥션이 없으면 예외 발생.  
 closeMethod : 톰캣 서버가 종료될 때 자원을 해제하기 위해 호출하는 메소드 이름. 매개변수가 없어야 함.  
 
-- DD file에 내용 추가.
+- DD file에 내용 추가.  
 
 ```
 <resource-ref>
@@ -120,7 +129,7 @@ closeMethod : 톰캣 서버가 종료될 때 자원을 해제하기 위해 호�
 
 JNDI : Java Naming and Directory Interface API. Directory Service 에 접근하는 데 필요.  
 
-- contextInitialized() 에서 DataSource 가져오기.
+- contextInitialized() 에서 DataSource 가져오기.  
 
 ```
 InitialContext initialContext = new InitialContext();
