@@ -33,7 +33,7 @@ collation-server=utf8_general_ci
 
 ### 원격 접속을 위해 유저 추가하기  
 `insert into mysql.user (host, user, password) values ('%', 'root' password('password'));`모든 아이피에서 root계정으로 접속 가능.    
-`grant all privileges on *.*. to 'root'@'%';` 모든 권한 추가.  
+`grant all privileges on *.* to 'root'@'%';` 모든 권한 추가.  
 `flush privileges;` 추가된 권한 반영.  
 
 ### 원격 접속을 위해 설정 추가하기
