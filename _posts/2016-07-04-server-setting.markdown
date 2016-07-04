@@ -36,6 +36,12 @@ collation-server=utf8_general_ci
 `grant all privileges on *.*. to 'root'@'%';` 모든 권한 추가.  
 `flush privileges;` 추가된 권한 반영.  
 
+### 원격 접속을 위해 설정 추가하기
+위에서 수정했던 my.cnf파일의 [client] 부분을 찾아서 아래 내용 추가.  
+```
+bind-address = *
+```
+
 
 ### 변경사항 반영 위해 디비 재시작  
 `sudo systemctl restart mariadb`  
