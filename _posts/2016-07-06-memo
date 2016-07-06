@@ -1,0 +1,8 @@
+---
+title : "오늘의 메모"
+layout : post
+---
+
+
+#### centos7에서 재부팅시 svn 자동 시작하도록 설정  
+`sudo systemctl enable /usr/lib/systemd/system/svnserve.service`  
