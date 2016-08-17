@@ -13,9 +13,12 @@ Yobi의 fork version. (Yobi 개발과정 : <http://www.slideshare.net/deview/131
 Apache 2.0 license.  
 (<https://repo.yona.io/yona-projects/yona/post/3> 참고)  
 
+<<<<<<< HEAD
 설치형으로 제공.  
   - 필요한만큼의 보안수준을 가질 수 있음.  
   - 외부 환경에 영향을 받지 않을 수 있음.  
+=======
+>>>>>>> 146b75d6969df74356c699cac2805ab44a2c0258
 
 Java 8 이상에서 동작.  
 Windows / linux / mac 지원.  
