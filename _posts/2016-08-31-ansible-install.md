@@ -1,5 +1,6 @@
 ---
 title: "Ansible 설치, 기본 사용법"
+layout: post
 ---
 
 
