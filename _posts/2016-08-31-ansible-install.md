@@ -25,6 +25,7 @@ Ansible이 Extra Packages for Enterprise Linux (EPEL) repository의 일부이기
 
 <br/>
 
+---
 
 ## inventory setting  
 
@@ -56,6 +57,7 @@ inventory 파일 작성법은 [Ansible documentation  - Inventory](http://docs.a
 
 <br/>
 
+---
 
 ## playbook  
 
@@ -109,10 +111,28 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0   
 ```  
 
+
+### play  
+
 보다시피, 같은 플레이북 내 두번의 플레이가 발생함을 알 수 있다. host가 변경되면서, 다시 새로운 play를 진행한다.  
 play가 시작됨과 동시에 ansible은 host의 정보를 모으고 아래 task 실행을 준비하는 `setup` task를 실행한다. 이 작업이 끝나면 아래에 명시된 tasks를 실행하게 된다.  `gather_facts: false`로 설정하여 host의 정보를 모으는 task를 생략할 수 있다.  
 한 playbook 내에 여러개의 play를 실행할 때 주의할 점은, play간의 정보를 공유하지 않는다는 것이다. 변수 선언으로 저장한 정보나 register도 play가 변경되면서부터는 사용할 수 없다.  
 
+
+#### facts  
+
+ansible이 setup 단계에서 자동으로 생성하는 변수만 가져올 수 있다.  
+
+```{.bash}
+ansible -m setup << hostname >>
+```  
+
+별도의 Inventory를 사용하려면 `ansible -m setup -i << inventory file >> << target host name >>`를 사용할 수도 있다.  
+
+
+<br/>
+
+---
 
 ### example  
 
@@ -123,7 +143,7 @@ play가 시작됨과 동시에 ansible은 host의 정보를 모으고 아래 tas
 ---
 - hosts: targets
   become: yes
-  user: centos
+  user: << username >>
   vars:
     motd_warning: 'WARNING: Use by ACME Employees ONLY'
   tasks:
@@ -158,7 +178,6 @@ PLAY RECAP *********************************************************************
 
 
 #### Variables (변수 사용)  
-
 
 위의 예제에서 vars에 변수를 쓰는 대신, 별도의 파일로 분리해서 가져올 수도 있는데, 이 때는 `vars_files :` 라고 작성하며, 아래에 파일 경로와 파일명을 작성한다. 변수 파일은 아래 형식으로 작성되면 된다.  
 
