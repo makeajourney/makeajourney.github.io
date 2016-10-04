@@ -63,9 +63,9 @@ class Person {
 
 class field에 @BeanProperty annotation을 명시하면 아래 4개의 메소드를 생성한다.   
 1. `name: String`   
-1. `name_=(newValue: String): Unit`  
-1. `getName(): String`  
-1. `setName(newValue: String): Unit`  
+2. `name_=(newValue: String): Unit`  
+3. `getName(): String`  
+4. `setName(newValue: String): Unit`  
 
 
 기본 생성자 필드에 자바 게터/세터가 필요하면 아래와 같이 하면 된다.  
