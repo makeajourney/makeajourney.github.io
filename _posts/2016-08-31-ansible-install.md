@@ -9,13 +9,13 @@ layout: post
 
 ### centos에서 yum으로 install  
 
-```{.bash}
+```sh
 sudo yum install ansible
 ```  
 
 `No package ansible available.` 이라고 나오면,  
 
-```{.bash}
+```sh
 sudo yum install epel-release
 sudo yum repolist
 ```  
@@ -34,7 +34,7 @@ Ansible이 Extra Packages for Enterprise Linux (EPEL) repository의 일부이기
 다른 경로를 기본적으로 인식하게 하고 싶은 경우는, cfg 파일을 변경해야 한다.
 다른 경로나 이름의 파일을 사용하고 싶은 경우, `ansible` 혹은 `ansible-playbook` 명령을 사용할 때 `-i` 옵션을 사용하여 명시하면 된다.  
 
-```{.bash}
+```sh
 ansible-playbook -i << inventory file >> << playbook yml >>
 ```  
 
@@ -86,7 +86,7 @@ ansible-playbook -i ansible_hosts helloworld.yml
 
 그러면 아래와 같은 결과를 확인할 수 있다.
 
-```{.bash}
+```sh
 PLAY [localhost] ***************************************************************
 
 TASK [setup] *******************************************************************
@@ -123,7 +123,7 @@ play가 시작됨과 동시에 ansible은 host의 정보를 모으고 아래 tas
 
 ansible이 setup 단계에서 자동으로 생성하는 변수만 가져올 수 있다.  
 
-```{.bash}
+```sh
 ansible -m setup << hostname >>
 ```  
 
@@ -160,7 +160,7 @@ ansible -m setup << hostname >>
 
 결과  
 
-```{.bash}
+```sh
 PLAY [targets] *****************************************************************
 
 TASK [setup] *******************************************************************
