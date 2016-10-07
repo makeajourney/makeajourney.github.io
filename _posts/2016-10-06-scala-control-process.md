@@ -55,7 +55,7 @@ val result = "ls -al .." !!
 url로부터 입력을 리다이렉트.  
 
 ```scala
-"grep Scala" #< new URL("http://horstmann.com/index.html")
+"grep Scala" #< new URL("http://horstmann.com/index.html") !
 ```  
 
 
