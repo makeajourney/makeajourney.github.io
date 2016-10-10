@@ -7,6 +7,8 @@ layout: post
 ## Trait
 
 
+<br/>
+
 ### trait as interface
 
 ```scala
@@ -35,6 +37,8 @@ class ConsoleLogger extends Logger with Cloneable with Serializable
 ```
 
 
+<br/>
+
 ### trait  implemented
 
 ```scala
@@ -50,6 +54,8 @@ class SavingsAccount extends Account with ConsoleLogger {
 }
 ```
 
+
+<br/>
 
 ### trait in object
 
@@ -75,6 +81,8 @@ val acct = new SavingsAccount with ConsoleLogger
 
 SavingsAccount 객체인 acct에서 log를 실행하면 ConsoleLogger의 log가 실행된다.  
 
+
+<br/>
 
 ### layered trait
 
@@ -103,6 +111,8 @@ trait ShortLogger extends Logged {
 ```
 
 
+<br/>
+
 ### overriding abstract method about trait
 
 trait의 추상메소드를 오버라이드 할 경우에는 `override`라는 키워드로는 충분치 않다.  
@@ -120,6 +130,8 @@ trait TimestampLogger extends Logger {
 }
 ```
 
+
+<br/>
 
 ### trait for rich interface
 
@@ -141,6 +153,8 @@ class SavingsAccount extends Account with Logger {
 }
 ```
 
+
+<br/>
 
 ### trait의 구체 필드
 
@@ -170,6 +184,8 @@ class SavingsAccount extends Account with ConsoleLogger with ShortLogger {
 위와 같이 클래스를 구성하면, ShortLogger의 maxLength는 서브클래스의 필드로 여겨진다. balance는 슈퍼클래스의 필드다.  
 
 
+<br/>
+
 ### abstract field of trait
 
 추상 필드가 있는 트레이트는 구체 서브클래스에서 반드시 오버라이드 되어야 한다.
@@ -198,6 +214,8 @@ val acct = new SavingsAccount with ConsoleLogger with ShortLogger {
 }
 ```
 
+
+<br/>
 
 ### 트레이트 생성 순서
 
@@ -229,6 +247,8 @@ class SavingsAccount extends Account with FileLogger with ShortLogger
 4. ShortLogger (두 번째 트레이트)  
 5. SavingsAccount (클래스)  
 
+
+<br/>
 
 ### 트레이트 필드 초기화  
 
@@ -270,10 +290,64 @@ out 필드는 처음 사용될 때 마다 초기화된다.
 레이지 값은 사용할 때 마다 초기화를 확인하므로 효울이 떨어질 수 있다.  
 
 
+<br/>
+
 ### 클래스를 확장한 트레이트  
 
 ```scala
 trait LoggedException extends Exception with Logged {
   def log() { log(getMessage()) }
 }
+
+class UnhappyException extends LoggedException {
+  override def getMessage() = "arggh!"
+}
 ```
+
+LoggedException 트레이트의 슈퍼클래스 Exception은 UnhappyException의 슈퍼클래스가 된다.  
+
+
+
+서브클래스가 클래스를 상속하고 이미 클래스를 확장한 트레이트를 사용하는 경우,  
+서브클래스가 상속한 클래스와 트레이트가 상속한 클래스가 관련 있는 클래스이면 가능하다.  
+
+```scala
+class UnhappyException extends IOException with LoggedException
+```
+
+위에서는 IOException이 이미 Exception을 확장한 클래스이다. 이런 경우에만 사용 가능하다.  
+아래와 같은 경우는 사용할 수 없다.  
+
+```scala
+class UnhappyFrame extends JFrame with LoggedException // error
+```
+
+
+<br/>
+
+### 셀프 타입  
+
+-  클래스를 지정하는 셀프타입  
+
+  트레이트가 `this: type =>` 으로 시작하는 경우, 해당 type의 서브클래스와 믹스인 가능.  
+
+  ```scala
+  trait LoggedException extends Logged {
+    this: Exception =>
+      def log() { log(getMessage()) }
+  }
+  ```
+
+  위 트레이트는 Exception을 확장하는 것이 아니라 셀프 타입을 가짐. -> Exception의 서브클래스에만 믹스 될 수 있음.  
+
+
+- 메소드를 지정하는 셀프타입  
+
+  ```scala
+  trait LoggedException extends Logged {
+    this: P def getMessage() : String } =>
+      def log() { log(getMessage()) }
+  }
+  ```  
+
+  위 트레이트는 getMessage 메소드를 가진 어떤 클래스나 믹스인 가능하다.  
