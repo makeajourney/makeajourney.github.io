@@ -345,7 +345,7 @@ class UnhappyFrame extends JFrame with LoggedException // error
 
   ```scala
   trait LoggedException extends Logged {
-    this: P def getMessage() : String } =>
+    this: { def getMessage() : String } =>
       def log() { log(getMessage()) }
   }
   ```  
