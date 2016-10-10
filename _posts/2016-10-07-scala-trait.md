@@ -327,7 +327,7 @@ class UnhappyFrame extends JFrame with LoggedException // error
 
 ### 셀프 타입  
 
--  클래스를 지정하는 셀프타입  
+- 클래스를 지정하는 셀프타입  
 
   트레이트가 `this: type =>` 으로 시작하는 경우, 해당 type의 서브클래스와 믹스인 가능.  
 
