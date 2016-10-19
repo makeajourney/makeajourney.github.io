@@ -161,7 +161,7 @@ Set(1, 2) subsetOf digits // true
 | coll + elem <br/>coll + (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 더해짐. | Set, Map |
 | coll - elem <br/>coll - (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 제거됨. | Set, Map, ArrayBuffer |
 | coll ++ coll2<br/>coll2 ++: coll | coll과 같은 타입의 콜렉션에 양쪽 콜렉션의 원소들을 포함. | Iterable |
-| coll -- coll2 | coll과 같은 타입의 콜렉션에 coll2의 원소들이 제거됨. (sequence의 경우, diff를 사용.) | Set, Map, ArrayBuffer |
+| coll -- coll2 | coll과 같은 타입의 콜렉션에 coll2의 원소들이 제거됨.<br/>(sequence의 경우, diff를 사용.) | Set, Map, ArrayBuffer |
 | elem :: lst <br/>lst2 ::: lst | 원소 혹은 주어진 리스트 lst 앞에 추가된 리스트. +:와 ++:와 같음. | List |
 | list ::: list2 | list ++: list2와 같음. | List |
 | set <code>|</code> set2 | 합집합. | Set |
