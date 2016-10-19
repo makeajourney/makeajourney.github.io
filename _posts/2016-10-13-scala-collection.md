@@ -170,3 +170,165 @@ Set(1, 2) subsetOf digits // true
 | coll += elem<br/>coll += (e1, e2, ...)<br/>coll ++= coll2 | 주어진 원소들을 추가하여 coll을 수정. | Mutable<br/>collections |
 | coll -= elem<br/>coll -= (e1, e2, ...)<br/>coll --= coll2 | 주어진 원소들을 제거하여 coll을 수정. | Mutable<br/>collections |
 | elem +=: coll<br/>coll2 ++=: coll | 주어진 원소나 콜렉션을 앞에 추가하여 coll을 수정. | ArrayBuffer |
+
+
+<br/>
+
+### common method
+
+| method | description |
+|---|---|
+| head | 첫 원소를 리턴. |
+| last | 마지막 원소를 리턴. |
+| headOption | 첫 원소를 option으로 리턴. |
+| lastOption | 마지막 원소를 option으로 리턴. |
+| tail | 첫 원소를 제외한 모두를 리턴. |
+| init | 마지막 원소를 제외한 모두를 리턴. |
+| length | 길이를 리턴. |
+| isEmpty | 길이가 0이면 true를 리턴. |
+| map(f), foreach(f), flatMap(f), collect(pf) | 함수를 모든 원소에 적용. |
+| reduceLeft(op), reduceRight(op), <br/>foldLeft(init)(op), foldRight(init)(op) | 이항 연산을 모든 원소에 주어진 순서로 적용. |
+| reduce(op), fold(init)(op),<br/>aggregate(init)(op, conbineOp) | 이항 연산을 임의의 순서로 적용 |
+| sum | 합(원소 타입이 암묵적으로 Numeric 트레이트로 변환될 수 있다는 가정하에) 리턴. |
+| product | 곱(원소 타입이 암묵적으로 Numeric 트레이트로 변환될 수 있다는 가정하에) 리턴. |
+| max | 최대(원소 타입이 Ordered 트레이트로 변환될 수 있다는 가정하에). |
+| min | 최소(원소 타입이 Ordered 트레이트로 변환될 수 있다는 가정하에). |
+| count(pred) | 조건을 만족하는 원소들의 숫자를 리턴. |
+| forall(pred) | 모든 원소가 조건을 만족하면 true. |
+| exists(pred) | 하나의 원소가 조건을 만족하면 true. |
+| filter(pred) | 조건을 만족하는 모든 원소를 리턴. |
+| filterNot(pred) | 조건을 만족하지 않는 모든 원소를 리턴. |
+| partition(pred) | 조건을 만족하는 원소들과 만족하지 않는 원소들을 분리하여 pair로 제공. |
+| takeWhile(pred) | pred를 만족하는 첫번째 원소를 리턴. |
+| dropWhile(pred) | pred를 만족하는 원소 중 첫번째 원소를 제거하고 리턴. |
+| span(pred) | takeWhile과 dropWhile의 결과값을 pair로 리턴. |
+| take(n) | 첫 n개의 원소를 리턴. |
+| drop(n) | 첫 n개를 제외한 모든 원소를 리턴. |
+| splitAt(n) | take와 drop의 결과값을 pair로 리턴. |
+| takeRight(n) | 마지막 n개의 원소를 리턴. |
+| dropRight(n) | 마지막 n개를 제외한 모든 원소 리턴. |
+| slice(from, to) | from에서 to 범위의 원소를 리턴. |
+| zip(coll2), <br/>zip(coll2, fill, fill2),<br/>zipWithIndex | 이 콜렉션과 다른 콜렉션 원소의 쌍들을 리턴. |
+| grouped(n) | 원소를 n개 단위로 묶은 iterator 제공. |
+| sliding(n) | 1 to n, 2 to n+1 형태로 원소를 n개 단위로 묶은 이터레이터 제공. |
+| mkString(before, between, after) | 주어진 문자열을 첫 번째 전, 각 원소 사이, 마지막 원소 후에 추가하여 모든 원소의 문자열을 만듬. |
+| addString(sb, before, between, after) | 모든 원소의 문자열을 만든 후 문자열 빌더에 추가. |
+| toIterable, toSeq, toIndexedSeq<br/>toArray, toList, toStream<br/>toSet, toMap| 콜렉션을 지정된 타입의 콜렉션으로 변환. |
+| copyToArray(arr), <br/>copyToArray(arr, start, length), <br/>copyToBuffer(buf) | 원소들을 배열 혹은 버퍼로 복사. |
+
+
+<br/>
+
+### folding
+
+```scala
+val freq = scala.collection.mutable.Map[Char, Int]()
+for (c <- "Mississippi") freq(c) = freq.getOrElse(c, 0) + 1
+// freq : Map(M -> 1, s -> 4, p -> 2, i -> 4)
+```
+
+```scala
+(Map[Char, Int]() /: "Mississippi") {
+  (m, c) => m + (c -> (m.getOrElse(c, 0) + 1))
+}
+// This returns immutable map : Map(M -> 1, i -> 4, s -> 4, p -> 2)
+```
+
+
+<br/>
+
+### scan
+
+모든 중간 결과의 콜렉션을 얻는다.  
+
+```scala
+(1 to 10).scanLeft(0)(_ + _)
+// result : Vector(0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55)
+```
+
+
+<br/>
+
+### zipping
+
+```scala
+val prices = List(5.0, 20.0, 9.95)
+val quantities = List(10, 2, 1)
+
+prices zip quantities
+// result : List[(Double, Int)] = List((5.0,10), (20.0,2), (9.95,1))
+
+(prices zip quantities) map { p => p._1 * p._2 }
+// result : List[Double] = List(50.0, 40.0, 9.95)
+
+((prices zip quantities) map { p => p._1 * p._2 }) sum
+// result : Double = 99.95
+```
+
+
+<br/>
+
+### iterator
+
+```scala
+while (iter.hasNext)
+  iter.next()
+
+for (elem <- iter)
+  elem
+```
+
+
+<br/>
+
+### stream
+
+스트림은 꼬리가 lazy하게 계산됨.  
+`#::` 연산자를 통해 스트림 생성.  
+
+```scala
+def numsFrom(n: BigInt) : Stream[BigInt] = n #:: numsFrom(n + 1)
+val tenOrMore = numsFrom(10)  // result : tenOrMore: Stream[BigInt] = Stream(10, ?)
+
+```
+
+
+<br/>
+
+### 자바 콜렉션과의 상호 호환
+
+자바 콜렉션을 사용하려면, 스칼라와 자바 콜렉션 사이 변환을 제공하는 `JavaConversions` 오브젝트를 가져온다.
+
+```scala
+import scala.collection.JavaConversions._
+val props: scala.collection.mutable.Map[String, String] = System.getProperties()
+props("com.horstmann.scala") = "impatient"  // put("com.hosrtmann.scala", "impatient") 호출
+```
+
+
+<br/>
+
+### thread safe Collections
+
+여러 스레드에서 수정 가능한 콜렉션에 접근 할 때, 다른 쓰레드들에서 접근하는 것과 동시에 한 쓰레드에서 콜렉션을 변경하지 않도록 해야 할 필요가 있다.  
+
+```scala
+// 동기화된 연산의 맵 생성
+val scores = new scala.collection.mutable.HashMap[String, Int] with
+  scala.collection.mutable.SynchronizedMap[String, Int]
+```
+
+혹은 `java.util.concurrent` 패키지의 클래스 사용. 데이터 구조와 관련있는 부분만 동기화하고, 관련 없는 부분은 다른 스레드에서 접근 가능.
+
+
+<br/>
+
+### 병렬 콜렉션
+
+`par` 메소드 사용  
+
+```scala
+coll.par.sum  // coll: collection name. 합을 병렬로 계산
+```
+
+여기서 리턴되는 병렬 콜렉션은 ParIterable의 서브 타입. 순차컬렉션으로 변환하려면 `ser` 메소드 사용.  
