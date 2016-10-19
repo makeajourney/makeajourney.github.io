@@ -146,7 +146,7 @@ digits contains 0     // false
 Set(1, 2) subsetOf digits // true
 ```
 
-`union`, `intersect`, `diff` 메소드로 집합 연산 수행 가능.
+`union`, `intersect`, `diff` 메소드로 집합 연산 수행 가능.  
 `|`, `&`, `%~`, `++`, `--` 연산자 사용 가능.
 
 
@@ -156,8 +156,17 @@ Set(1, 2) subsetOf digits // true
 
 | 연산자 | 설명 | 콜렉션 타입 |
 |---|---|---|
-| coll :+ elem<br/>elem +: coll | coll과 같은 타입의 콜렉션에 elem이 뒤 혹은 앞에 추가 | Seq |
-| coll + elem <br/>coll + (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 더해짐 | Set, Map |
-| coll - elem <br/>coll - (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 제거됨 | Set, Map, ArrayBuffer |
-| coll ++ coll2<br/>coll2 ++: coll | coll과 같은 타입의 콜렉션에 양쪽 콜렉션의 원소들을 포함 | Iterable |
-| coll -- coll2 | coll과 같은 타입의 콜렉션에 coll2의 원소들이 제거됨. | Set, Map, ArrayBuffer |
+| coll :+ elem | coll과 같은 타입의 콜렉션에 elem이 뒤에 추가. | Seq |
+| elem +: coll | coll과 같은 타입의 콜렉션에 elem이 앞에 추가. | Seq |
+| coll + elem <br/>coll + (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 더해짐. | Set, Map |
+| coll - elem <br/>coll - (e1, e2, ...) | coll과 같은 타입의 콜렉션에 주어진 원소가 제거됨. | Set, Map, ArrayBuffer |
+| coll ++ coll2<br/>coll2 ++: coll | coll과 같은 타입의 콜렉션에 양쪽 콜렉션의 원소들을 포함. | Iterable |
+| coll -- coll2 | coll과 같은 타입의 콜렉션에 coll2의 원소들이 제거됨. (sequence의 경우, diff를 사용.) | Set, Map, ArrayBuffer |
+| elem :: lst <br/>lst2 ::: lst | 원소 혹은 주어진 리스트 lst 앞에 추가된 리스트. +:와 ++:와 같음. | List |
+| list ::: list2 | list ++: list2와 같음. | List |
+| set <code>|</code> set2 | 합집합. | Set |
+| set & set2 | 교집합. | Set |
+| set &~ set2 | 차집합. | Set |
+| coll += elem<br/>coll += (e1, e2, ...)<br/>coll ++= coll2 | 주어진 원소들을 추가하여 coll을 수정. | Mutable<br/>collections |
+| coll -= elem<br/>coll -= (e1, e2, ...)<br/>coll --= coll2 | 주어진 원소들을 제거하여 coll을 수정. | Mutable<br/>collections |
+| elem +=: coll<br/>coll2 ++=: coll | 주어진 원소나 콜렉션을 앞에 추가하여 coll을 수정. | ArrayBuffer |
