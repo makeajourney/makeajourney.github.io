@@ -105,43 +105,45 @@ rdd.sortByKey()   // result : {(1, 2), (3, 4), (3, 6)}
 
 #### 두 pair RDD에 대한 functions
 
-rdd = {(1, 2), (3, 4), (3, 6)}, other = {(3, 9)}
+rdd = {(1, 2), (3, 4), (3, 6)}, other = {(3, 9)}  
 
 
 `subtractByKey` : 다른 쪽 RDD에 있는 키를 써서 RDD의 데이터를 삭제한다.  
 
 ```scala
 rdd.subtractByKey(other)  // result : {(1, 2)}
-```
+```  
 
 
-`join` : 두 RDD에 대해 이너 조인(inner join)을 수행한다.  
+`join` : 두 RDD에 대해 이너 조인(inner join)을 수행한다.   
 
 ```scala
 rdd.join(other)   // result : {(3, (4, 9)), (3, (6, 9))}
-```
+```  
 
 
-`rightOuterJoin` : 첫 번째 RDD에 있는 키들을 대상으로 두 RDD간에 조인을 수행한다.  
+`rightOuterJoin` : 첫 번째 RDD에 있는 키들을 대상으로 두 RDD간에 조인을 수행한다.   
 
 ```scala
 rdd.rightOuterJoin(other) // result : {(3, (Some(4), 9)), (3, (Some(6), 9))}
-```
+```  
 
 
 `leftOuterJoin` : 다른 쪽 RDD에 있는 키들을 대상으로 두 RDD 간에 조인을 수행한다.  
 
 ```scala
 rdd.leftOuterJoin(other)  // result : {(1, (2, None)), (3, (4, Some(9))), (3, (6, Some(9)))}
-```
+```  
 
 
 `cogroup` : 동일 키에 대해 양쪽 RDD를 그룹화한다.  
 
 ```scala
 rdd.cogroup(other)    // result : {(1, ([2], [])), (3, ([4, 6], [9]))}
-```
+```  
 
+
+<br/>
 
 #### value에 filter 적용
 
@@ -206,36 +208,37 @@ rdd.sortByKey(sortIntegersByString)
 
 ### pair RDD Action
 
-rdd example
+rdd example  
 
 ```scala
 {(1, 2), (3, 4), (3, 6)}
-```
+```  
+
 
 `countByKey()` : 각 키에 대한 값의 개수를 센다.  
 
 ```scala
 rdd.countByKey()    // result : {(1, 1), (3, 2)}
-```
+```  
 
 
 `collectAsMap()` : 쉬운 검색을 위해 결과를 맵 형태로 모은다.  
 
 ```scala
 rdd.collectAsMap()    // result : Map{(1, 2), (3, 4), (3, 6)}
-```
+```  
 
 
 `lookup(key)` : 들어온 키에 대한 모든 값을 되돌려 준다.  
 
 ```scala
 rdd.lookup(3)   // result : [4, 6]
-```
+```  
 
 
 <br/>
 
-### Data Partitioning
+### Data Partitioning  
 
 ```scala
 // code initialization, read user information from hadoop sequence file
@@ -254,10 +257,12 @@ def processNewLogs(logFileName: String) {
   }.count()
   println("Number of visits to non-subscribed topics: " + offTopicVisits)
 }
-```
+```  
 
 
-### 파티셔닝 연산
+<br/>
+
+### 파티셔닝 연산  
 
 페이지 랭크 알고리즘  
 
@@ -279,4 +284,4 @@ for (i <- 0 until 10) {
 
 // 결과 기록
 ranks.saveAsTextFile("ranks")
-```
+```  
