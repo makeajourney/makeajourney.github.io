@@ -9,6 +9,7 @@ layout : post
 정상적으로 build 이루어지나, wildfly가 war file을 풀면서 에러 발생.  
 
 - error log  
+
 ```
 [0m[31m00:21:43,301 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-4) MSC000001: Failed to start service jboss.deployment.unit."ROOT.war".PARSE: org.jboss.msc.service.StartException in service jboss.deployment.unit."ROOT.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "ROOT.war"
 ...
