@@ -1,6 +1,6 @@
 ---
 title : "PostgreSQL"
-layout: post
+layout : post
 ---
 
 
