@@ -7,7 +7,7 @@ layout : post
 ## Style Guide for Python Code  
 
 
-PEP 8 : https://www.python.org/dev/peps/pep-0008/  
+PEP 8 : <https://www.python.org/dev/peps/pep-0008/>  
 
 
 
@@ -29,4 +29,4 @@ PEP 8 : https://www.python.org/dev/peps/pep-0008/
 
 
 
-Coding Style Check module : https://pypi.python.org/pypi/pep8  
+Coding Style Check module : <https://pypi.python.org/pypi/pep8>  
