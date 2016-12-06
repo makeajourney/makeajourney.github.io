@@ -1,6 +1,6 @@
 ---
-title:"자료구조 : 01 배열과 문자열"
-layout: post
+title : "자료구조 : 01 배열과 문자열"
+layout : post
 ---
 
 
