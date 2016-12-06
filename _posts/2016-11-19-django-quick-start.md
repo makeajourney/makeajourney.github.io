@@ -13,7 +13,7 @@ layout : post
 
 3.4 이상의 버전 설치 필요.  
 
-(https://www.python.org/downloads/) 에서 다운로드 가능.  
+<https://www.python.org/downloads/> 에서 다운로드 가능.  
 
 
 <br/>
