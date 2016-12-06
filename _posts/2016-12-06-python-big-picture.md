@@ -12,4 +12,4 @@ layout: post
 
 
 IPython - slideshare  
-(http://www.slideshare.net/koorukuroo/ipython-51789479)  
+<http://www.slideshare.net/koorukuroo/ipython-51789479>  
