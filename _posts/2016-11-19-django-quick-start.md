@@ -13,7 +13,7 @@ layout : post
 
 3.4 이상의 버전 설치 필요.  
 
-(https://www.python.org/downloads/) 에서 다운로드 가능.  
+<https://www.python.org/downloads/> 에서 다운로드 가능.  
 
 
 <br/>
@@ -40,6 +40,12 @@ source <가상환경이름>/bin/activate
 
 실행이 제대로 되면 콘솔 프롬프트 앞쪽에 가상 개발환경의 이름이 적혀있는 것을 확인할 수 있다.  
 
+
+* 가상 개발환경 종료   
+
+```
+deactivate
+```
 
 <br/>
 
