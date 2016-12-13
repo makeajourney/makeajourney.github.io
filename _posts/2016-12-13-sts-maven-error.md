@@ -7,13 +7,13 @@ layout : post
 1. `POM.xml` 의 dependencies 안에 아래 내용 작성   
 
 
-    ```xml
-    <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.4.3</version>
-    </dependency>
-    ```  
+```xml
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>2.4.3</version>
+</dependency>
+```  
 
 
 2. Package Explorer 에서 Project folder 우클릭 > `Run As` > `Maven Install`  
