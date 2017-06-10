@@ -1,6 +1,7 @@
 ---
 title: "Java - Concurrency - Thread object"
 layout: post
+comments: true
 ---
 
 http://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html  
