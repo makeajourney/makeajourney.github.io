@@ -12,6 +12,10 @@ github : <https://github.com/makeajourney>
 ## history  
 - 충남대학교 공과대학 컴퓨터공학과, 학사, 2011.03~2017.08(졸업예정)  
 - [세림티에스지](www.selim.co.kr), 기술연구소 연구원, 2016.08~2016.11  
+    * object storage(ceph, glusterfs) 검증  
+    * container 기반(docker, kubernetes) 검증  
+    * operation automation 관련 orchestration script 작성(ansible playbook)  
+    * spark(scala) 기반 전력 수요량 예측 모델 개발  
 
 
 ## Community  
@@ -43,13 +47,18 @@ github : <https://github.com/makeajourney>
 - spec: Python 2.7, Java,  
 - Source code: [Crawler](https://github.com/MJ-Youn/crawler), [Web](https://github.com/makeajourney/hub)  
 - 논문(final Report): [google drive](https://drive.google.com/file/d/0B2OC1aS74bTTaWhZWndRbHZQeWs/view?usp=sharing)    
-- design documentation :  
+- design documentation : 
+[문제 정의서](https://drive.google.com/open?id=0B2OC1aS74bTTWlhZNXk0UHRBZGs),
+[유스케이스명세서](https://drive.google.com/open?id=0B2OC1aS74bTTWUxSTWd2ZlhLaFk),
+[클래스다이어그램](https://drive.google.com/open?id=0B2OC1aS74bTTd1hvOFVEOWdoV00),
+[시퀀스다이어그램](https://drive.google.com/open?id=0B2OC1aS74bTTSUZjVG1Rb3lIc0U),
+[액티비티다이어그램](https://drive.google.com/open?id=0B2OC1aS74bTTbElmeHpkaklsMGc)
 
 
 ## have used  
 - ansible  
-  playbook script : <https://github.com/makeajourney/ansible_study>  
-- data processing  
+  playbook script: <https://github.com/makeajourney/ansible_study>  
+- data processing: [파이썬을 이용한 공공데이터 분석](https://drive.google.com/open?id=0B2OC1aS74bTTbzJJYm00QjJ0RzQ),  [R을 이용한 공공데이터 분석](https://drive.google.com/open?id=0B2OC1aS74bTTdDliMnhNUm9kb1U)  
 
 
 ## interested in  
