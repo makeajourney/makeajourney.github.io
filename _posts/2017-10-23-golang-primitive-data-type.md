@@ -17,4 +17,4 @@ rune // int32의 다른 이름(alias)
 
 float32 float64  
 
-complex64 complex128  
+complex64 complex128  // example: (2+3i)
