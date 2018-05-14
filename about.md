@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 # 김소연 (Soyoun Kim)  
-email : <mailto:makeajourney@gmail.com>  
+email : <makeajourney@gmail.com>  
 blog : <http://makeajourney.github.io>  
 github : <https://github.com/makeajourney>  
 
