@@ -16,8 +16,9 @@ github : <https://github.com/makeajourney>
     * container 기반(docker, kubernetes) 검증  
     * operation automation 관련 orchestration script 작성(ansible playbook)  
     * spark(scala) 기반 전력 수요량 예측 모델 개발  
-- 넥스트매치, 서버 개발자, 2017.07~2018.03
-    * 모바일 서비스 "아만다" 신규 기능 개발 / 유지보수 
+- 넥스트매치, 서버 개발자, 2017.07~2018.03  
+    * 모바일 서비스 "아만다" 신규 기능 개발 / 유지보수  
+
 
 ## Community  
 - [파이콘 한국](https://www.pycon.kr) 준비위원회 2016.12~  
