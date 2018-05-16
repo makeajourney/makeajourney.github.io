@@ -17,7 +17,8 @@ github : <https://github.com/makeajourney>
     * operation automation 관련 orchestration script 작성(ansible playbook)  
     * spark(scala) 기반 전력 수요량 예측 모델 개발  
 - 넥스트매치, 서버 개발자, 2017.07~2018.03  
-    * 모바일 서비스 "아만다" 신규 기능 개발 / 유지보수  
+    * 모바일 서비스 "아만다" API Server, admin site 신규 기능 개발 / 유지보수 (ruby, rails, postgresql, angular1)  
+    * 신규 채팅 프로젝트 개발 (Go lang, mysql)
 
 
 ## Community  
