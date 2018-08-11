@@ -19,6 +19,12 @@ rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-*.rpm
 rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
 ```
 
+
+amazon linux  
+<https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-enable-epel/>
+
+
+
 참고 :  
 Install EPEL repo on CentOS 7 and RHEL 7  
 <http://sharadchhetri.com/2014/09/07/install-epel-repo-centos-7-rhel-7/>  
