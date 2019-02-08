@@ -1,11 +1,8 @@
-# Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+###################################
+# Site wide configuration
+####################################
+#
 title: Hello, My Special World
 email: makeajourney@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -13,15 +10,66 @@ description: > # this means to ignore newlines until "baseurl:"
   work as Back-end Software Engineer.
   Majoring in Computer Science Engineering
   in Chung-nam National University
-  makeajourney@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.makeajourney.kr" # the base hostname & protocol for your site
-twitter_username: hacerunviaje
-github_username:  makeajourney
+url: http://blog.makeajourney.kr # the base hostname & protocol for your site
+keywords: ["blog", "jekyll"]
 
-# Build settings
+#
+###################################
+# Jekyll configuration
+####################################
+#
 markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+permalink: /articles/:year-:month/:title
 
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Soyoun Kim
+  avatar: leonids-logo.png
+  job: "Backend Software Engineer"
+  bio: "Look at the stars. Look how they shine for you."
+  email: makeajourney@gmail.com
+  disqus-shortname:
+  twitter: hacerunviaje
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: makeajourney
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: makeajourney
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username
+  reddit: #username
+  telegram: #username

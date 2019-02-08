@@ -1,0 +1,11 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: Nextmatch
+  link: http://nextmatch.kr/
+  date: July 2017 - March 2018
+  job: Backend Software Engineer
+
+- name: Selim TSG
+  link: http://www.selimtsg.com/
+  date: August 2016 - November 2016
+  job: Researcher
