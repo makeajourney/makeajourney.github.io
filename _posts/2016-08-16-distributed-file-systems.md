@@ -61,7 +61,7 @@ Java로 작성되어 있기 때문에 JAVA api 사용 가능. JNI(Nava Native In
 
 
 
--------
+---
 
 
 
