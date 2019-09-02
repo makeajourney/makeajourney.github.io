@@ -1,3 +1,8 @@
+---
+title: "Kotlin in Action Chapter 3"
+layout: post
+---
+
 This note is summary of _Kotlin in Action_.
 
 You can access the code samples for this chapter [here](https://github.com/Kotlin/kotlin-in-action/tree/master/src/ch03).
@@ -275,3 +280,29 @@ println(kotlinLogo.trimMargin("."))
 
 3중 따옴표 문자열에는 줄 바꿈, 탭 등이 그대로 들어간다.  
 여러 줄 문자열을 코드에서 알아보기 쉽게 하기 위해 들여쓰기를 하되, 들여쓰기의 끝부분을 특정한 문자로 표시하고 trimMargin을 사용해 해당 문자와 들여쓴 공백을 제거한다. 위 예제에서는 마침표를 들여쓰기 구분 문자로 사용했다.  
+
+## 3.6 코드 다듬기: 로컬 함수(local functions)와 확장
+
+반복되는 코드(검증 코드 등)를 로컬함수로 분리하여 중복을 없애는 동시에 코드 구조를 깔끔하게 유지할 수 있다.  
+로컬함수는 자신이 속한 Outer function의 모든 파라미터와 변수를 사용할 수 있다.  
+중첩된 함수의 깊이가 깊어지면 코드를 읽기가 어려워 질 수 있음에 주의하라.  
+
+~~~kotlin
+class User(val id: Int, val name: String, val address: String)
+
+fun User.validateBeforeSave() {
+    fun validate(value: String, fieldName: String) { // 로컬 함수
+        if (value.isEmpty()) {
+            throw IllegalArgumentException(
+                "Can't save user $id: empty $fieldName")
+        }
+    }
+    validate(name, "Name")
+    validate(address, "Address")
+}
+
+fun saveUser(user: User) {
+    user.validateBeforeSave()
+    // user를 데이터베이스에 저장한다.
+}
+~~~
