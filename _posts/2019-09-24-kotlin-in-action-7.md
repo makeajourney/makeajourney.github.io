@@ -79,7 +79,7 @@ operator fun Point.unaryMinus(): Point {
 
 ## 7.2 비교 연산자 오버로딩
 
-### 동등성 연산자: equals
+### 7.2.1 동등성 연산자: equals
 
 코틀린은 == 연산자 호출을 equals 메소드 호출로 컴파일한다.  
 != 연산자를 사용하는 식도 equals 호출로 컴파일 된다.  
@@ -87,5 +87,26 @@ operator fun Point.unaryMinus(): Point {
 
 `a == b` -> `a?.equals(b) ?: (b == null)`
 
+equals는 Any에 정의되어 있는 메소드이므로 override가 붙는다.
+
+식별자 비교(identity equals) 연산자 `===`를 사용해 equals의 파라미터가 수신 객체와 같은지 살펴본다. `===`를 오버로딩 할 수는 없다.
+
+### 7.2.2 순서 연산자: compareTo
+
+코틀린에서 비교 연산자는 Comparable 인터페이스의 compareTo 호출로 컴파일된다.  
+`p1 < p2`는 `p1.compareTo(p2) < 0`과 같다.
+
+~~~kotlin
+class Person(
+    val firstName: String, val lastName: String
+) : Comparable<Person> {
+    override fun compareTo(other: Person): Int {
+        return compareValuesBy(this, other
+            Person::lastName, Person::firstName)
+    }
+}
+~~~
+
+코틀린의 `compareValuesBy` 함수를 사용해 `compareTo`를 쉽고 간결하게 정의할 수 있다.
 
 
