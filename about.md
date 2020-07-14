@@ -10,22 +10,34 @@ email : <makeajourney@gmail.com>
 blog : <http://makeajourney.github.io>  
 github : <https://github.com/makeajourney>  
 
-## history  
+## Experiences  
 
-- 충남대학교 공과대학 컴퓨터공학과, 학사, 2011.03~2017.08(졸업)  
+- [마카롱팩토리](https://mycle.co.kr/), 서버 개발자, 2019.07~2020.02
+    * 모바일 서비스 "마카롱" API Server 신규 기능 개발 / 유지보수 (Kotlin, Spring Boot, MySQL, angular1)
+    * 신규 프로젝트 "마카롱 파트너스" API Server, Admin site 신규 개발 (API Server: Kotlin, Spring Boot, MySQL, Admin: React.js, TypeScript)  
+    * Amazon Web Service ECS 기반으로 한 전반적인 운영 / 배포 / 모니터링
+
+- [넥스트매치](http://nextmatch.kr), 서버 개발자, 2017.07~2018.03  
+    * 모바일 서비스 "아만다" API Server, admin site 신규 기능 개발 / 유지보수 (ruby, rails, postgresql, angular1)  
+    * 신규 채팅 프로젝트 개발 (Go lang, mysql)  
+
 - [세림티에스지](www.selim.co.kr), 기술연구소 연구원, 2016.08~2016.11  
     * object storage(ceph, glusterfs) 검증  
     * container 기반(docker, kubernetes) 검증  
     * operation automation 관련 orchestration script 작성(ansible playbook)  
     * spark(scala) 기반 전력 수요량 예측 모델 개발  
-- [넥스트매치](http://nextmatch.kr), 서버 개발자, 2017.07~2018.03  
-    * 모바일 서비스 "아만다" API Server, admin site 신규 기능 개발 / 유지보수 (ruby, rails, postgresql, angular1)  
-    * 신규 채팅 프로젝트 개발 (Go lang, mysql)  
+
+
+## Education
+
+- 충남대학교 공과대학 컴퓨터공학과, 학사, 2011.03~2017.08(졸업)  
+
 
 ## Community  
 
-- [파이콘 한국](https://www.pycon.kr) 준비위원회 2016.12~  
+- [파이콘 한국](https://www.pycon.kr) 준비위원회 2016.12~2018.09  
   관련 post : [파이콘 준비위원회, 그리고 6개월](http://blog.pycon.kr/2017/06/18/pycon-staff-retrospection)  
+
 
 ## Project  
 
