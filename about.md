@@ -15,7 +15,7 @@ github : <https://github.com/makeajourney>
 - [마카롱팩토리](https://mycle.co.kr/), 서버 개발자, 2019.07~2020.02
     * 모바일 서비스 "마카롱" API Server 신규 기능 개발 / 유지보수 (Kotlin, Spring Boot, MySQL, angular1)
     * 신규 프로젝트 "마카롱 파트너스" API Server, Admin site 신규 개발 (API Server: Kotlin, Spring Boot, MySQL, Admin: React.js, TypeScript)  
-    * Amazon Web Service ECS 기반으로 한 전반적인 운영 / 배포 / 모니터링
+    * Amazon Web Services ECS 기반으로 한 전반적인 운영 / 배포 / 모니터링
 
 - [넥스트매치](http://nextmatch.kr), 서버 개발자, 2017.07~2018.03  
     * 모바일 서비스 "아만다" API Server, admin site 신규 기능 개발 / 유지보수 (ruby, rails, postgresql, angular1)  
