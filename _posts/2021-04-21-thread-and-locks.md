@@ -11,6 +11,6 @@ layout: post
 - 잠금장치는 최대한 짧게 보유.  
 
 
-Java Memory Model [link](http://www.cs.umd.edu/~pugh/java/memoryModel/)
-[JSR 133 FAQ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html) 
-- [번역](https://medium.com/@qwefgh90/jsr-133-java-memory-model-faq-%EB%B2%88%EC%97%AD-128487aebc1e)
+Java Memory Model [link](http://www.cs.umd.edu/~pugh/java/memoryModel/). 
+[JSR 133 FAQ](https://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html)   
+- [번역](https://medium.com/@qwefgh90/jsr-133-java-memory-model-faq-%EB%B2%88%EC%97%AD-128487aebc1e)  
