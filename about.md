@@ -12,6 +12,9 @@ github : <https://github.com/makeajourney>
 
 ## Experiences  
 
+- [캐롯손해보험](https://www.carrotins.com), 서버 개발자, 2021.02~
+    * 보험계산, 가입, 계약관리 등 고객측 서비스를 담당하는 채널 서비스 API Server 개발 / 유지보수 (Java, Kotlin, Spring boot)
+
 - [마카롱팩토리](https://mycle.co.kr/), 서버 개발자, 2019.07~2020.02
     * 모바일 서비스 "마카롱" API Server 신규 기능 개발 / 유지보수 (Kotlin, Spring Boot, MySQL, angular1)
     * 신규 프로젝트 "마카롱 파트너스" API Server, Admin site 신규 개발 (API Server: Kotlin, Spring Boot, MySQL, Admin: React.js, TypeScript)  
