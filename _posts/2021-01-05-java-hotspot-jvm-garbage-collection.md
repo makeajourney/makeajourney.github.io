@@ -106,8 +106,8 @@ young area에서 old area로의 promote 단계가 없음.
 java -XX:+PrintCommandLineFlags -version
 ```
 
-java 8 - Parallel GC. 
-java 11 - G1 GC. 
+java 8 - Parallel GC.  
+java 11 - G1 GC.   
 
 ---
 ### References
