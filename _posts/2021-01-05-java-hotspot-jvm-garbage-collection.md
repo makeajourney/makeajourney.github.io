@@ -99,8 +99,8 @@ matrix의 각 영역에 객체를 할당해두고 GC 실행.
 young area에서 old area로의 promote 단계가 없음.  
 
 ---
-java 8 - Parallel GC
-java 11 - G1 GC
+java 8 - Parallel GC. 
+java 11 - G1 GC. 
 
 ---
 ### References
